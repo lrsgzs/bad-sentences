@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import AppNavbar from '@/layout/AppNavbar.vue';
+import { useTheme } from 'vuetify';
+import AppLayout from '@/layout/AppLayout.vue';
 
 const router = useRouter();
 
 const isLoading = ref(false);
+const theme = useTheme();
+
+onMounted(() => {
+    theme.change("system");
+})
 
 router.beforeEach((from, to, next) => {
     console.log('导航开始。');
@@ -25,11 +31,11 @@ router.afterEach((to, from, failure) => {
 <template>
     <v-app>
         <router-view v-slot="{ Component }">
-            <AppNavbar>
+            <AppLayout>
                 <transition name="fade" mode="out-in">
                     <component :is="Component" />
                 </transition>
-            </AppNavbar>
+            </AppLayout>
         </router-view>
 
         <!-- 加载中提示 -->

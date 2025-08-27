@@ -19,7 +19,7 @@ const openLink = (link: string) => window.open(link, '_blank');
 <template>
     <div class="flex justify-between bg-neutral-800 px-4 py-1">
         <div class="flex items-center text-white">
-            <span>Return to the First Time. In memory of the old days!</span>
+            <span>Copyright by lrs2187</span>
         </div>
         <div class="flex items-center">
             <v-icon-btn

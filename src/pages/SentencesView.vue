@@ -9,7 +9,7 @@ const route = useRoute();
 const router = useRouter();
 const pageNumber = computed(() => parseInt((route.params.pageNumber as string) ?? '1'));
 
-const pageNumberRef = ref(pageNumber);
+const pageNumberRef = ref(pageNumber.value);
 
 const [totalPagesData, loadTotalPagesData] = useFetchData<{ pages: number }>('./data.json');
 const [pageData, loadPageData] = useFetchData<Sentence[]>(() => `./pages/${pageNumber.value}.json`);
@@ -33,7 +33,7 @@ watch(pageNumberRef, newPageNumber => {
 });
 
 watch(
-    () => pageNumber,
+    pageNumber,
     () => {
         loadPageData();
     },

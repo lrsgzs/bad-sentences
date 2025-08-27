@@ -59,8 +59,12 @@ onMounted(() => {
                 <v-card v-for="sentence of pageData.data">
                     <template v-slot:text>
                         <div class="flex justify-between items-center gap-2">
-                            <div class="flex items-baseline gap-2">
-                                <h3 style="font-size: 16px">{{ sentence.text }}</h3>
+                            <div class="flex items-end gap-2">
+                                <div class="flex flex-col">
+                                    <span v-for="line of sentence.text.split('\n')" style="font-size: 16px">
+                                        {{ line }}
+                                    </span>
+                                </div>
 
                                 <span class="text-neutral-700 dark:text-neutral-300" style="font-size: 14px">
                                     ——{{ sentence.author }}

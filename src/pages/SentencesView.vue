@@ -11,8 +11,8 @@ const pageNumber = computed(() => parseInt((route.params.pageNumber as string) ?
 
 const pageNumberRef = ref(pageNumber);
 
-const [totalPagesData, loadTotalPagesData] = useFetchData<{ pages: number }>('/data.json');
-const [pageData, loadPageData] = useFetchData<Sentence[]>(() => `/pages/${pageNumber.value}.json`);
+const [totalPagesData, loadTotalPagesData] = useFetchData<{ pages: number }>('./data.json');
+const [pageData, loadPageData] = useFetchData<Sentence[]>(() => `./pages/${pageNumber.value}.json`);
 
 const onClickCopy = async (sentence: Sentence) => {
     try {

@@ -10,8 +10,8 @@ const isLoading = ref(false);
 const theme = useTheme();
 
 onMounted(() => {
-    theme.change("system");
-})
+    theme.change('system');
+});
 
 router.beforeEach((from, to, next) => {
     console.log('导航开始。');

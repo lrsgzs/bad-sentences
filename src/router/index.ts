@@ -19,7 +19,7 @@ const routes = [
                 name: 'sentences',
                 params: {
                     pageNumber: 1,
-                }
+                },
             };
         },
     },
@@ -46,8 +46,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
+    history: createWebHashHistory(),
+    routes,
 });
 
 export { router };

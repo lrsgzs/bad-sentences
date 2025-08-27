@@ -39,16 +39,16 @@ const infos = [
             </p>
             <v-table>
                 <thead>
-                <tr>
-                    <th>类型</th>
-                    <th>使用的库</th>
-                </tr>
+                    <tr>
+                        <th>类型</th>
+                        <th>使用的库</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr v-for="info in infos" :key="info.type">
-                    <th>{{ info.type }}</th>
-                    <th>{{ info.lib }}</th>
-                </tr>
+                    <tr v-for="info in infos" :key="info.type">
+                        <th>{{ info.type }}</th>
+                        <th>{{ info.lib }}</th>
+                    </tr>
                 </tbody>
             </v-table>
         </v-container>

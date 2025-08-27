@@ -21,20 +21,23 @@ const onClickCopy = async (sentence: Sentence) => {
     } catch (err) {
         console.error('复制失败', err);
     }
-}
+};
 
 watch(pageNumberRef, newPageNumber => {
     router.push({
-        name: "sentences",
+        name: 'sentences',
         params: {
             pageNumber: newPageNumber,
-        }
+        },
     });
 });
 
-watch(() => pageNumber, () => {
-    loadPageData();
-})
+watch(
+    () => pageNumber,
+    () => {
+        loadPageData();
+    },
+);
 
 onMounted(() => {
     loadTotalPagesData();
@@ -57,9 +60,9 @@ onMounted(() => {
                     <template v-slot:text>
                         <div class="flex justify-between items-center gap-2">
                             <div class="flex items-baseline gap-2">
-                                <h3 style="font-size: 16px;">{{ sentence.text }}</h3>
+                                <h3 style="font-size: 16px">{{ sentence.text }}</h3>
 
-                                <span class="text-neutral-700 dark:text-neutral-300" style="font-size: 14px;">
+                                <span class="text-neutral-700 dark:text-neutral-300" style="font-size: 14px">
                                     ——{{ sentence.author }}
                                 </span>
                             </div>
